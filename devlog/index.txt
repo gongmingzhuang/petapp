@@ -1,0 +1,34 @@
+// petapp/devlog/index.txt
+
+原文地址： https://blog.csdn.net/qq_27755287/article/details/86635468 
+
+步骤一、安装vue-cli 
+	1.node -v 
+	2.npm install -g webpack 
+	3.npm install -g vue-cli 
+
+步骤二、构建工程文件 
+	1.vue init webpack projectName 
+		项目名称（注意名称中不要出现大写字母，否则会报错）
+	    项目描述（可写可不写，看个人需要）
+	    作者（可写可不写，看个人需要）
+	    vue编译，这个选默认即可，运行加编译Runtime + Compiler
+	    是否安装vue-router是否安装vue路由工具
+	    是否使用代码管理工具ESLint管理你的代码
+	    后面几个是测试的工具，需要自己自行了解
+	    ......
+
+步骤三、项目结构解析 
+	d build 构建脚本目录 
+	d config 构建配置目录
+	d node_modules 依赖工具包目录 
+	d src 源码目录
+	-d assets 资源目录
+	-d components 组件目录
+	-d router 路由文件目录
+	-f App.vue 入口组件 
+	-f main.js 入口页面文件 
+	d static 静态文件
+	f .babelrc babel 配置 
+	f index.html 入口页面 
+	f package.json 依赖描述文件
