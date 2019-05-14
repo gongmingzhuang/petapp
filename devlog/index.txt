@@ -21,10 +21,13 @@
 步骤三、项目结构解析 
 	d build 构建脚本目录 
 	d config 构建配置目录
+		！修改打包后文件路径——index.js 文件 
 	d node_modules 依赖工具包目录 
 	d src 源码目录
 	-d assets 资源目录
-	-d components 组件目录
+	-d components 公共组件目录
+	-d *page 页面相关组件目录
+	-d *fetch 存放所有axios处理和封装
 	-d router 路由文件目录
 	-f App.vue 入口组件 
 	-f main.js 入口页面文件 
@@ -32,3 +35,28 @@
 	f .babelrc babel 配置 
 	f index.html 入口页面 
 	f package.json 依赖描述文件
+
+步骤四、引入UI框架
+
+步骤五、vue-router 的使用
+	路由配置的基本步骤
+	命名规则
+	嵌套路由
+	路由传参
+	具名视图
+	路由守卫
+	滚动行为
+	懒加载
+
+步骤六、全局过滤器filter 和全局注册组件的引入
+	。新建assets/js/filters.js
+	。在main.js 中注册过滤器
+	。全局组件同理
+
+步骤七、请求api管理
+
+步骤八、代理服务器的配置
+
+步骤九、vuex状态管理引入
+
+
