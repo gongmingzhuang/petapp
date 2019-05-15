@@ -2,6 +2,6 @@
 
 import testInput from '@/components/testInput.vue'
 
-exports default{
+export default{
 	testInput: testInput
 }
