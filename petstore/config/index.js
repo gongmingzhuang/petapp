@@ -4,13 +4,16 @@
 
 const path = require('path')
 
+// 引入代理规则
+var proxyConfig=require('./proxyConfig')
+
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: proxyConfig.proxy,
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

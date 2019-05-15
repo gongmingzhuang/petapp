@@ -1,0 +1,1 @@
+// src/store/getter.js

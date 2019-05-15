@@ -28,6 +28,7 @@
 	-d components 公共组件目录
 	-d *page 页面相关组件目录
 	-d *fetch 存放所有axios处理和封装
+	-d *store vuex数据存放
 	-d router 路由文件目录
 	-f App.vue 入口组件 
 	-f main.js 入口页面文件 
@@ -54,9 +55,44 @@
 	。全局组件同理
 
 步骤七、请求api管理
+	.使用axios发起异步的请求，安装很简单，npm install axios 即可
+	.新建一个fecth文件夹并在其下新建一个api.js用来存放所有的axios处理和封装
+	.修改接口相关的代码，只需要在api.js中修改，包括路由修改以及路由拦截等
 
 步骤八、代理服务器的配置
+	.在该项目下访问服务端接口数据的时候，就会产生跨域的问题，这个时候，就需要使用到proxy代理数据请求
+	.在fetch文件夹下新建一个config.js的文件，用于存放我们的代理路径配置
+	.在config目录下新建一个proxyConfig.js,存放代理服务器的配置规则
+	.在config目录下的index.js文件中，引入我们的代理规则
+	.重新启动项目，我们就可以做到代理转发来实现跨域请求
 
 步骤九、vuex状态管理引入
+	.需要对同一个数据源进行大量的操作的时候，建议使用
+	.如果每个组件的数据都可以轻易的在data中管理，那其实是没必要引进去的
+	.该管理工具是更友好的解决了组件间传值的问题，包括了兄弟组件
+	.npm install vuex
+	.src下新增一个store文件夹作为vuex数据存放位置
+	.创建了一个index.js入口文件，getters.js,mutation.js和mutationtypes.js,以及actions.js
+	.把Vuex插件引入vue中，并新建了一个Vuex.Store()对象，对于我们的调试更方便，当我们创建为Vuex.store对象后，我们还需要把它声明到main.js的页面Vue对象中
+	.在使用mutation的时候，我们是推荐大家把所有的行为常量保存到一个.js文件中，这样更有利于管理我们的项目，因为我们的mutation往往是需要使用action进一步封装的，这样我们在使用的时候，只需要修改常量对象里的属性值，就可以达到同时修改mutation和action的对应关系，一举两得
+	.在组件内引入vuex中存放的state和action
+		import {mapActions, mapState} from 'vuex'
+			...
+			computed: {
+				 ...mapState({
+				 recipeList: state => state.recipeList,
+				 currRecipe: state => state.currRecipe
+				 })
+			 },
+			methods: {
+				...mapActions([
+					'add_new_recipt',
+					'change_curr_tab'
+				]),
+				addNewRecipt(type) {
+					this.add_new_recipt(type)
+				}
+		}
+		使用mapActions和mapState以及利用三点扩展符来引入state 和action，state最好存放在组件的computed 属性内，这样当state中的数据发生改变的时候，也会实时的修改computed里定义的变量值，来实现数据的绑定，同时，当我们修改了某些数据的时候，也要同步到state中去，这样数据源才可以保持一致性与准确性
 
 

@@ -6,14 +6,15 @@ import router from './router'
 
 import filters from './assets/js/filters'
 import components from './assets/js/components'
+import store from './store/index'
 
 // 1.注册全局过滤器
-Object.keys(filters).forEach(key =>{
-	Vue.filter(key, filters[key])
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
 })
 // 2.注册全局组件
-Object.keys(components).forEach(key =>{
-	Vue.component(key, components[key])
+Object.keys(components).forEach(key => {
+  Vue.component(key, components[key])
 })
 
 Vue.config.productionTip = false
@@ -22,6 +23,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
