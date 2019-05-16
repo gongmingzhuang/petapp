@@ -24,7 +24,7 @@
 		！修改打包后文件路径——index.js 文件 
 	d node_modules 依赖工具包目录 
 	d src 源码目录
-	-d assets 资源目录
+	-d assets 资源目录 
 	-d components 公共组件目录
 	-d *page 页面相关组件目录
 	-d *fetch 存放所有axios处理和封装

@@ -1,0 +1,19 @@
+使用技术
+	项目框架：vue-cli
+	UI 框架：Mint-UI + MUI
+	路由配置：vue-router
+	数据访问：axios
+	数据管理：vuex
+	样式预处理：less
+	打包工具：webpack
+	开发服务器：node.js + express
+
+day-1 静态页面
+  task 1：全站基本框架
+  task 2：首页（结构+表现）
+  task 3：首页（交互）
+  task 4：商品列表页（结构+表现）
+  task 5：商品列表页（交互）
+  task 6：商品详情页（结构+表现）
+  task 7：商品详情页（交互）
+
